@@ -1,5 +1,5 @@
 // Add the FABLO WhatsApp number here: country code + number, digits only (e.g. 919876543210)
-const WHATSAPP_NUMBER='';
+const WHATSAPP_NUMBER='9503476517';
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(a.dataset.wa)}`});
 
 const root=document.documentElement;
