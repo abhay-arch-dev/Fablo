@@ -168,6 +168,57 @@ footer{position:relative;background:var(--navy);color:#fff;padding:38px 0}
 .js .flavor.in .flavor-product{translate:0 0;rotate:0deg;opacity:1}
 .js .flavor.in:hover .flavor-product{rotate:-3deg}
 
+/* Section headers: staggered eyebrow → heading wipe → copy */
+.js .section-top.reveal,.js .story-copy.reveal{translate:0 0;scale:1;opacity:1}
+.js .section-top .eyebrow,.js .story-copy .eyebrow{display:inline-block;opacity:0;letter-spacing:8px;transition:opacity .7s ease,letter-spacing 1s var(--ease)}
+.js .section-top.in .eyebrow,.js .story-copy.in .eyebrow{opacity:1;letter-spacing:2.8px}
+.js .section-top h2,.js .story-copy h2,.js .cta h2{clip-path:inset(0 0 100% 0);translate:0 30px;transition:opacity .8s ease,clip-path 1s var(--ease) .15s,translate 1s var(--ease) .15s}
+.js .section-top.in h2,.js .story-copy.in h2,.js .cta h2.in{clip-path:inset(0 0 -10% 0);translate:0 0}
+.js .section-top p,.js .story-copy p,.js .story-copy .btn{opacity:0;translate:0 18px;transition:opacity .8s ease .35s,translate .8s var(--ease) .35s}
+.js .story-copy p+p{transition-delay:.45s}
+.js .story-copy .btn{transition-delay:.55s,.55s}
+.js .section-top.in p,.js .story-copy.in p,.js .story-copy.in .btn{opacity:1;translate:0 0}
+
+/* Flavour cards: copy slides in after the card lands */
+.js .flavor .flavor-copy>*{opacity:0;translate:-16px 0;transition:opacity .6s ease,translate .7s var(--ease)}
+.js .flavor.in .flavor-copy>*{opacity:1;translate:0 0}
+.js .flavor.in .flavor-copy>:nth-child(1){transition-delay:.25s}
+.js .flavor.in .flavor-copy>:nth-child(2){transition-delay:.35s}
+.js .flavor.in .flavor-copy>:nth-child(3){transition-delay:.45s}
+.js .flavor.in .flavor-copy>:nth-child(4){transition-delay:.55s}
+
+/* Story art: circle pops, word swings in */
+.js .story-art .big-word{opacity:0;transform:rotate(-24deg) scale(.6);transition:opacity .8s ease .2s,transform 1.1s var(--spring) .2s}
+.js .story-art.in .big-word{opacity:1;transform:rotate(-9deg) scale(1)}
+.js .story-art .circle{scale:.3;opacity:0;transition:scale 1.2s var(--spring),opacity .8s ease}
+.js .story-art.in .circle{scale:1;opacity:1}
+
+/* Values: top border draws across, then content rises */
+.js .value{border-top-color:transparent;position:relative}
+.js .value:before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:#d8d4ca;scale:0 1;transform-origin:left;transition:scale 1s var(--ease) calc(var(--d,0s) + .1s),background .3s}
+.js .value.in:before{scale:1 1}
+.js .value:hover:before{background:#cb7a90}
+.js .value .num{display:inline-block;opacity:0;translate:0 10px;transition:opacity .6s ease calc(var(--d,0s) + .3s),translate .6s var(--ease) calc(var(--d,0s) + .3s)}
+.js .value.in .num{opacity:1;translate:0 0}
+
+/* Why CTA + final CTA buttons pop */
+.js .why-cta.reveal,.js .cta-actions.reveal{scale:.85}
+.js .why-cta.reveal.in,.js .cta-actions.reveal.in{scale:1;transition-timing-function:ease,var(--spring),var(--spring)}
+
+/* Scroll-linked motion (progressive enhancement) */
+@supports (animation-timeline:view()){
+  .ticker{animation:tickerSkew linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+  .story-art .big-word{animation:driftX linear both;animation-timeline:view();animation-range:cover}
+  .story-art .spark.a{translate:0 0;animation:spin 12s linear infinite,driftY linear both;animation-timeline:auto,view()}
+  .flavor-product{animation:floatUp linear both;animation-timeline:view();animation-range:cover}
+  .cta{animation:ctaGrow linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+}
+@keyframes tickerSkew{from{transform:skewY(-2deg)}50%{transform:none}to{transform:skewY(2deg)}}
+@keyframes driftX{from{margin-left:-80px}to{margin-left:80px}}
+@keyframes driftY{from{translate:0 40px}to{translate:0 -60px}}
+@keyframes floatUp{from{margin-bottom:-30px}to{margin-bottom:30px}}
+@keyframes ctaGrow{from{clip-path:inset(0 6% round 40px)}to{clip-path:inset(0 0 round 0)}}
+
 @keyframes breathe{50%{scale:1.06}}
 @keyframes spin{to{rotate:360deg}}
 @keyframes marquee{to{transform:translateX(-50%)}}
@@ -229,4 +280,40 @@ footer{position:relative;background:var(--navy);color:#fff;padding:38px 0}
   *,*:before,*:after{animation:none!important;transition:none!important}
   .js .reveal,.js .hero .eyebrow,.js .hero-copy p,.js .actions,.js .player,.js .flavor .flavor-product{opacity:1;translate:none;scale:none;rotate:none}
   .js .line>span{translate:none}
+  .js .section-top *,.js .story-copy *,.js .cta h2,.js .flavor .flavor-copy>*,.js .value .num,.js .story-art *{opacity:1;translate:none;clip-path:none;letter-spacing:inherit}
+  .js .story-art .circle{scale:1}.js .story-art .big-word{transform:rotate(-9deg)}
+  .js .value:before{scale:1 1}
+}
+
+/* ---------- 3D depth ---------- */
+/* Hero tips back into the screen as you scroll away */
+.hero-inner{perspective:1000px}
+.hero-copy,.player{transform:rotateX(calc(var(--hero,0)*22deg)) translateZ(calc(var(--hero,0)*-160px));transform-origin:50% 100%;will-change:transform}
+/* Pointer tilt + glare on story art and values (flavor cards already tilt) */
+.story-inner,.values{perspective:1100px}
+.story-art,.value{transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transform-style:preserve-3d;transition:transform .3s ease-out,translate .3s ease,border-color .3s}
+.story-art .big-word{translate:0 0 60px}
+.story-art .circle{translate:0 0 25px}
+.flavor:after,.story-art:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;opacity:0;transition:opacity .4s ease;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),#ffffff59,transparent 55%)}
+.flavor:hover:after,.story-art:hover:after{opacity:1}
+.flavor-product{transform:translateZ(40px)}
+
+/* Scroll-linked 3D (Chrome/Edge; others keep the fade-in reveals) */
+@supports (animation-timeline:view()){
+  .flavor{animation:tiltIn linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+  .flavor:nth-child(even){animation-name:tiltInR}
+  .value{animation:flipIn linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+  .story-art{animation:swivel linear both;animation-timeline:view();animation-range:cover}
+  .section-top h2,.cta h2{animation:depthText linear both;animation-timeline:view();animation-range:entry 0% cover 40%}
+}
+@keyframes tiltIn{from{rotate:1 .4 0 28deg;transform-origin:50% 100%}to{rotate:1 .4 0 0deg}}
+@keyframes tiltInR{from{rotate:1 -.4 0 28deg}to{rotate:1 -.4 0 0deg}}
+@keyframes flipIn{from{rotate:y -55deg}to{rotate:y 0deg}}
+@keyframes swivel{from{rotate:y 22deg}50%{rotate:y 0deg}to{rotate:y -14deg}}
+@keyframes depthText{from{rotate:x 50deg;scale:.85}to{rotate:x 0deg;scale:1}}
+
+@media(max-width:760px){.story-art .big-word{translate:none}}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy,.player{transform:none}
+  .flavor,.value,.story-art,.section-top h2,.cta h2{rotate:none}
 }

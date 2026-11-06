@@ -170,11 +170,13 @@ if (finePointer) {
         film.style.setProperty('--px', (.5 - e.clientX / innerWidth) * 18 + 'px');
         film.style.setProperty('--py', (.5 - e.clientY / innerHeight) * 12 + 'px');
     }, { passive: true });
-    document.querySelectorAll('.flavor').forEach(card => {
+    document.querySelectorAll('.flavor,.story-art,.value').forEach(card => {
         card.addEventListener('pointermove', e => {
             const r = card.getBoundingClientRect();
             card.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 8 + 'deg');
             card.style.setProperty('--rx', (.5 - (e.clientY - r.top) / r.height) * 6 + 'deg');
+            card.style.setProperty('--gx', (e.clientX - r.left) / r.width * 100 + '%');
+            card.style.setProperty('--gy', (e.clientY - r.top) / r.height * 100 + '%');
         });
         card.addEventListener('pointerleave', () => { card.style.removeProperty('--ry'); card.style.removeProperty('--rx'); });
     });
