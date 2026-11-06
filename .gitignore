@@ -2,3 +2,4 @@
 # Originals, superseded by index.html and assets/
 fablo_website_with_real_packaging-1*.html
 WhatsApp Video*.mp4
+node_modules/
