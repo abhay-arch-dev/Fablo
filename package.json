@@ -2,6 +2,7 @@
   "name": "fablo-website",
   "private": true,
   "scripts": {
+    "start": "tsc && python3 -m http.server 8000",
     "build": "tsc",
     "watch": "tsc --watch"
   },

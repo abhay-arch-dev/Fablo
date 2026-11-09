@@ -5,7 +5,7 @@
     const c = await res.json();
     const $ = (sel) => document.querySelector(sel);
     const waIcon = '<svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>';
-    const waHref = (msg) => `https://wa.me/${c.contact.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    const waHref = (msg) => `https://wa.me/${String(c.contact.whatsappNumber).replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`;
     const esc = (s) => s.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
     // A link: WhatsApp (opens in new tab, with icon) or a normal href
     const link = (l, cls = '') => l.whatsapp
