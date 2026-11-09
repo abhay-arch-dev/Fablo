@@ -1,0 +1,101 @@
+{
+  "contact": {
+    "whatsappNumber": "",
+    "email": "contact@fablofoods.com",
+    "emailSubject": "Hello FABLO",
+    "website": "https://fablofoods.com"
+  },
+  "meta": {
+    "title": "FABLO — Fabulous snacking, naturally",
+    "description": "Meet FABLO roasted makhana: a fabulous little crunch made for your everyday moments."
+  },
+  "nav": [
+    { "label": "Our flavours", "href": "#snacks" },
+    { "label": "Our story", "href": "#story" },
+    { "label": "The FABLO way", "href": "#why" }
+  ],
+  "headerCta": { "label": "ORDER NOW", "whatsapp": "Hi FABLO! I would like to place an order." },
+  "hero": {
+    "eyebrow": "A little fabulous in every bite",
+    "titleLine1": "Snack happy.",
+    "titleLine2": "Feel fabulous.",
+    "text": "Meet your new favourite crunch. FABLO brings roasted makhana to your everyday moments—with bold flavour, a lighter feel, and a whole lot of joy.",
+    "orderButton": { "label": "Order on WhatsApp", "whatsapp": "Hi FABLO! I would like to place an order." },
+    "primaryLink": { "label": "Discover the crunch ↘", "href": "#snacks" },
+    "secondaryLink": { "label": "Get to know us", "href": "#story" },
+    "playerHint": "Drag anywhere to scrub · Tap for a crunch"
+  },
+  "videoChapters": [
+    { "label": "Salt & Pepper", "time": 0 },
+    { "label": "Cream & Onion", "time": 2.3 },
+    { "label": "The crunch", "time": 3.5 },
+    { "label": "Up close", "time": 6 },
+    { "label": "Both flavours", "time": 7.2 }
+  ],
+  "ticker": ["GOOD MOOD SNACKING", "CRUNCH INTO JOY", "MAKE EVERY MOMENT FABLO", "GOOD MOOD SNACKING"],
+  "flavours": {
+    "eyebrow": "Meet your flavour crush",
+    "title": "One snack. A world of crunch.",
+    "text": "From creamy and savoury to simply satisfying, there’s a FABLO flavour for every kind of day.",
+    "items": [
+      {
+        "color": "pink",
+        "tag": "01 · Creamy, savoury, happy",
+        "name": "Cream & Onion",
+        "text": "A deliciously familiar flavour with a fabulous little crunch. Your movie-night, desk-time, anytime companion.",
+        "image": "assets/images/cream-onion.jpg",
+        "imageAlt": "FABLO Cream & Onion roasted makhana pack",
+        "button": "Order on WhatsApp",
+        "whatsapp": "Hi FABLO! I would like to order Cream & Onion roasted makhana."
+      },
+      {
+        "color": "green",
+        "tag": "02 · Simple, crisp, feel-good",
+        "name": "Himalayan Salt & Pepper",
+        "text": "Clean, classic and wonderfully crunchy. Sometimes, the simplest things are the most fabulous.",
+        "image": "assets/images/salt-pepper.jpg",
+        "imageAlt": "FABLO Himalayan Salt and Pepper roasted makhana pack",
+        "button": "Order on WhatsApp",
+        "whatsapp": "Hi FABLO! I would like to order Himalayan Salt & Pepper roasted makhana."
+      }
+    ]
+  },
+  "story": {
+    "artWord": "FABLO",
+    "eyebrow": "The story of FABLO",
+    "titleLines": ["Fabulous is a feeling.", "Make it a habit."],
+    "paragraphs": [
+      "We believe the little things can make a day feel extraordinary. A pause between meetings. A shared laugh. A snack that hits just right.",
+      "That’s why we’re bringing a fresh, flavourful spin to roasted makhana—so you can make room for more joyful moments, one satisfying crunch at a time."
+    ],
+    "button": { "label": "Let’s make snack time fabulous", "whatsapp": "Hi FABLO! I would love to know more about your snacks." }
+  },
+  "values": {
+    "eyebrow": "The FABLO way",
+    "title": "Good crunch. Good energy.",
+    "text": "We’re here to make snack time feel a little more considered—and a lot more fun.",
+    "items": [
+      { "label": "01 / FLAVOUR FIRST", "title": "Never boring", "text": "We believe better snacking should be full of flavour, texture and personality." },
+      { "label": "02 / MADE FOR MOMENTS", "title": "Everyday fabulous", "text": "From a quick break to a catch-up with friends, FABLO belongs in the moments you love." },
+      { "label": "03 / THOUGHTFUL CRUNCH", "title": "Rooted in makhana", "text": "A modern take on a much-loved ingredient, made for curious snackers everywhere." }
+    ],
+    "button": { "label": "Ask us on WhatsApp", "whatsapp": "Hi FABLO! I have a question." }
+  },
+  "connect": {
+    "eyebrow": "Let’s talk FABLO",
+    "title": "Have a fabulous idea?",
+    "textLines": ["Retail, partnerships, or just want to say hello?", "We’d love to hear from you."],
+    "orderButton": { "label": "Order on WhatsApp", "whatsapp": "Hi FABLO! I would like to place an order." },
+    "contactButton": { "label": "Contact us on WhatsApp", "whatsapp": "Hi FABLO! I would like to get in touch about retail or partnerships." }
+  },
+  "footer": {
+    "copyright": "© 2026 FABLO · A brand by Caramov Consumer Products",
+    "links": [
+      { "label": "Flavours", "href": "#snacks" },
+      { "label": "Our story", "href": "#story" },
+      { "label": "WhatsApp us", "whatsapp": "Hi FABLO! I would like to get in touch." },
+      { "label": "fablofoods.com", "href": "https://fablofoods.com" }
+    ]
+  },
+  "floatingButton": { "label": "Order on WhatsApp", "whatsapp": "Hi FABLO! I would like to place an order." }
+}

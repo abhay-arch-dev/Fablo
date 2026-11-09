@@ -1,7 +1,4 @@
 "use strict";
-document.querySelectorAll('[data-wa]').forEach(a => { a.href = `https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=${encodeURIComponent(a.dataset.wa ?? '')}`; });
-document.querySelectorAll('[data-email]').forEach(a => { a.href = `mailto:${CONTACT.EMAIL}?subject=${encodeURIComponent(CONTACT.EMAIL_SUBJECT)}`; });
-document.querySelectorAll('[data-email-text]').forEach(el => { el.textContent = CONTACT.EMAIL; });
 const byId = (id) => document.getElementById(id);
 const root = document.documentElement;
 const calm = matchMedia('(prefers-reduced-motion:reduce)').matches;

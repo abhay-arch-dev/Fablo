@@ -1,7 +1,3 @@
-document.querySelectorAll<HTMLAnchorElement>('[data-wa]').forEach(a=>{a.href=`https://wa.me/${CONTACT.WHATSAPP_NUMBER}?text=${encodeURIComponent(a.dataset.wa ?? '')}`});
-document.querySelectorAll<HTMLAnchorElement>('[data-email]').forEach(a=>{a.href=`mailto:${CONTACT.EMAIL}?subject=${encodeURIComponent(CONTACT.EMAIL_SUBJECT)}`});
-document.querySelectorAll('[data-email-text]').forEach(el=>{el.textContent=CONTACT.EMAIL});
-
 interface Bit{x:number;y:number;vx:number;vy:number;s:number;c:string;spin:number;vs:number;life:number}
 interface Drag{x:number;t:number;moved:boolean;wasPaused:boolean}
 

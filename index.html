@@ -21,8 +21,8 @@
 </div>
 <header class="wrap">
   <a class="brand" href="#home">FABL<span>O</span></a>
-  <nav class="nav" id="nav"><a href="#snacks">Our flavours</a><a href="#story">Our story</a><a href="#why">The FABLO way</a></nav>
-  <a class="nav-cta" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to place an order."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>ORDER NOW</a>
+  <nav class="nav" id="nav"></nav>
+  <a id="headerCta"></a>
   <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
 </header>
 <main>
@@ -30,59 +30,40 @@
   <canvas class="sparks" id="sparks" aria-hidden="true"></canvas>
   <div class="wrap hero-inner">
     <div class="hero-copy" id="heroCopy">
-      <div class="eyebrow">A little fabulous in every bite</div>
-      <h1><span class="line"><span>Snack happy.</span></span><span class="line"><span><em>Feel fabulous.</em></span></span></h1>
-      <p>Meet your new favourite crunch. FABLO brings roasted makhana to your everyday moments—with bold flavour, a lighter feel, and a whole lot of joy.</p>
-      <div class="actions"><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to place an order."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a><a class="btn" href="#snacks">Discover the crunch ↘</a><a class="btn secondary" href="#story">Get to know us</a></div>
+      <div class="eyebrow" data-c="hero.eyebrow"></div>
+      <h1><span class="line"><span data-c="hero.titleLine1"></span></span><span class="line"><span><em data-c="hero.titleLine2"></em></span></span></h1>
+      <p data-c="hero.text"></p>
+      <div class="actions" id="heroActions"></div>
     </div>
     <div class="player" id="player" role="group" aria-label="Background video controls">
-      <div class="chapters" id="chapters">
-        <button type="button" data-t="0">Salt &amp; Pepper</button>
-        <button type="button" data-t="2.3">Cream &amp; Onion</button>
-        <button type="button" data-t="3.5">The crunch</button>
-        <button type="button" data-t="6">Up close</button>
-        <button type="button" data-t="7.2">Both flavours</button>
-      </div>
+      <div class="chapters" id="chapters"></div>
       <div class="player-bar">
         <button class="icon-btn" id="playBtn" type="button" aria-label="Pause video"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="i-play" d="M8 5v14l11-7z"/></svg></button>
         <input class="scrub" id="scrub" type="range" min="0" max="1000" value="0" aria-label="Seek video">
         <button class="icon-btn" id="muteBtn" type="button" aria-label="Turn sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="i-waves" d="M15.500 8.500a5 5 0 0 1 0 7l-1-1a3.600 3.600 0 0 0 0-5zM17.800 6.200a8.200 8.200 0 0 1 0 11.600l-1-1a6.800 6.800 0 0 0 0-9.600z"/><path class="i-x" d="m15 9.700 1-1 2.300 2.300 2.300-2.300 1 1-2.300 2.300 2.300 2.300-1 1-2.300-2.300-2.300 2.300-1-1 2.300-2.300z"/></svg></button>
       </div>
-      <p class="player-hint">Drag anywhere to scrub · Tap for a crunch</p>
+      <p class="player-hint" data-c="hero.playerHint"></p>
     </div>
   </div>
 </section>
-<div class="ticker" aria-hidden="true"><div class="ticker-track"><span>GOOD MOOD SNACKING <i>✦</i></span><span>CRUNCH INTO JOY <i>✦</i></span><span>MAKE EVERY MOMENT FABLO <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>CRUNCH INTO JOY <i>✦</i></span><span>MAKE EVERY MOMENT FABLO <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>CRUNCH INTO JOY <i>✦</i></span><span>MAKE EVERY MOMENT FABLO <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span><span>CRUNCH INTO JOY <i>✦</i></span><span>MAKE EVERY MOMENT FABLO <i>✦</i></span><span>GOOD MOOD SNACKING <i>✦</i></span></div></div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
 <section id="snacks" class="band"><div class="wrap">
-  <div class="section-top"><div class="eyebrow">Meet your flavour crush</div><h2>One snack. A world of crunch.</h2><p>From creamy and savoury to simply satisfying, there’s a FABLO flavour for every kind of day.</p></div>
-  
-  <div class="flavors">
-    <article class="flavor pink">
-      <div class="flavor-copy"><small>01 · Creamy, savoury, happy</small><h3>Cream & Onion</h3>
-      <p>A deliciously familiar flavour with a fabulous little crunch. Your movie-night, desk-time, anytime companion.</p><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to order Cream &amp; Onion roasted makhana."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a></div>
-      <img class="flavor-product" src="assets/images/cream-onion.jpg" alt="FABLO Cream & Onion roasted makhana pack">
-    </article>
-    <article class="flavor green">
-      <div class="flavor-copy"><small>02 · Simple, crisp, feel-good</small><h3>Himalayan Salt & Pepper</h3>
-      <p>Clean, classic and wonderfully crunchy. Sometimes, the simplest things are the most fabulous.</p><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to order Himalayan Salt &amp; Pepper roasted makhana."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a></div>
-      <img class="flavor-product" src="assets/images/salt-pepper.jpg" alt="FABLO Himalayan Salt and Pepper roasted makhana pack">
-    </article>
-  </div>
+  <div class="section-top"><div class="eyebrow" data-c="flavours.eyebrow"></div><h2 data-c="flavours.title"></h2><p data-c="flavours.text"></p></div>
+  <div class="flavors" id="flavors"></div>
 </div></section>
 <section class="story" id="story"><div class="wrap story-inner">
-  <div class="story-art"><div class="circle"></div><div class="big-word">FABLO</div><div class="spark a">✦</div><div class="spark b">✧</div></div>
-  <div class="story-copy"><div class="eyebrow">The story of FABLO</div><h2>Fabulous is a feeling.<br>Make it a habit.</h2><p>We believe the little things can make a day feel extraordinary. A pause between meetings. A shared laugh. A snack that hits just right.</p><p>That’s why we’re bringing a fresh, flavourful spin to roasted makhana—so you can make room for more joyful moments, one satisfying crunch at a time.</p><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would love to know more about your snacks."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Let’s make snack time fabulous</a></div>
+  <div class="story-art"><div class="circle"></div><div class="big-word" data-c="story.artWord"></div><div class="spark a">✦</div><div class="spark b">✧</div></div>
+  <div class="story-copy"><div class="eyebrow" data-c="story.eyebrow"></div><h2 id="storyTitle"></h2><div id="storyText" style="display:contents"></div></div>
 </div></section>
 <section id="why" class="band"><div class="wrap">
-  <div class="section-top"><div class="eyebrow">The FABLO way</div><h2>Good crunch. Good energy.</h2><p>We’re here to make snack time feel a little more considered—and a lot more fun.</p></div>
-  <div class="values"><div class="value"><div class="num">01 / FLAVOUR FIRST</div><h3>Never boring</h3><p>We believe better snacking should be full of flavour, texture and personality.</p></div><div class="value"><div class="num">02 / MADE FOR MOMENTS</div><h3>Everyday fabulous</h3><p>From a quick break to a catch-up with friends, FABLO belongs in the moments you love.</p></div><div class="value"><div class="num">03 / THOUGHTFUL CRUNCH</div><h3>Rooted in makhana</h3><p>A modern take on a much-loved ingredient, made for curious snackers everywhere.</p></div></div>
-  <div class="why-cta reveal"><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I have a question."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Ask us on WhatsApp</a></div>
+  <div class="section-top"><div class="eyebrow" data-c="values.eyebrow"></div><h2 data-c="values.title"></h2><p data-c="values.text"></p></div>
+  <div class="values" id="values"></div>
+  <div class="why-cta reveal" id="whyCta"></div>
 </div></section>
-<section class="cta" id="connect"><div class="eyebrow">Let’s talk FABLO</div><h2>Have a fabulous idea?</h2><p>Retail, partnerships, or just want to say hello?<br>We’d love to hear from you.</p><div class="cta-actions"><a class="btn wa" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to place an order."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a><a class="btn" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to get in touch about retail or partnerships."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg>Contact us on WhatsApp</a><a class="btn secondary" href="#connect" data-email><span data-email-text></span> ↗</a></div></section>
+<section class="cta" id="connect"><div class="eyebrow" data-c="connect.eyebrow"></div><h2 data-c="connect.title"></h2><p id="connectText"></p><div class="cta-actions" id="connectActions"></div></section>
 </main>
-<footer><div class="wrap foot"><div><a class="brand" href="#home">FABL<span>O</span></a><p>© 2026 FABLO · A brand by Caramov Consumer Products</p></div><div class="foot-links"><a href="#snacks">Flavours</a><a href="#story">Our story</a><a href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to get in touch.">WhatsApp us</a><a href="https://fablofoods.com">fablofoods.com</a></div></div></footer>
-<a aria-label="Order on WhatsApp" class="wa-fab" href="https://wa.me/" target="_blank" rel="noopener" data-wa="Hi FABLO! I would like to place an order."><svg class="wa-i" aria-hidden="true"><use href="#wa"/></svg><b>Order on WhatsApp</b></a>
-<script src="js/config.js"></script>
-<script src="js/main.js"></script>
+<footer><div class="wrap foot"><div><a class="brand" href="#home">FABL<span>O</span></a><p data-c="footer.copyright"></p></div><div class="foot-links" id="footLinks"></div></div></footer>
+<a id="waFab"></a>
+<script src="js/content.js"></script>
 </body>
 </html>
